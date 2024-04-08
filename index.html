@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Frist Page</title>
+    
+</head>
+<body>
+    <p id="info"></p>
+    <button onclick="openURL(event);" name="openURL">Open URL</button>
+    <button id="alert" name="alert" >Open Alert</button>
+    <button id="msg" name="message" >Open Message</button>
+
+    <script>
+        function openURL(event){
+            // window.open("https://www.google.com");
+            // document.location="https://www.google.com";
+            // history.forward();
+            console.log(event);
+            document.getElementById("info").innerHTML=event.target.name;
+        }
+        // const alertButton=document.querySelector("#alert");
+        const alertButton=document.getElementById("alert");
+        alertButton.onclick=(event)=>{
+            alert("Welcome to JS "+event.target.name);
+        }
+        const msgButton=document.getElementById("msg");
+        msgButton.addEventListener("click",(event)=>{
+             alert("this is msg "+event.target.name);
+        });
+    </script>
+</body>
+</html>
